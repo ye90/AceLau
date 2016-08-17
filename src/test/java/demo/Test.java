@@ -5,7 +5,7 @@ import static org.junit.Assert.*;
 public class Test {
 
 	static{
-		System.out.println("static first");
+		System.out.println("static first!");
 	}
 	
 	static{
