@@ -1,18 +1,16 @@
 package demo;
 
-import static org.junit.Assert.*;
+import java.text.SimpleDateFormat;
 
 public class Test {
 
-	static{
-		System.out.println("static first!");
-	}
-	
-	static{
-		System.out.println("static second");
-	}
-	
-	public static void main(String[] args) {
-		System.out.println("main");
+	@org.junit.Test
+	public void testName() throws Exception {
+		String accTime="2008-08-08 11:11:11";
+		String cardId="0808";
+		SimpleDateFormat yyyyMMddHHmmss = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		SimpleDateFormat imagePath = new SimpleDateFormat("yyyyMMdd/HH/yyyyMMddHHmmss");
+		String imgPath = imagePath.format(yyyyMMddHHmmss.parse(accTime))+ cardId + ".jpg";
+		System.out.println(imgPath);
 	}
 }

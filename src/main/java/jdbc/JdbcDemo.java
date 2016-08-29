@@ -41,7 +41,8 @@ public class JdbcDemo {
 	@Test
 	public void testAdd(){
 		try{
-			stmt.executeUpdate("insert into users (name,password,email,birthday) values ('范青霞','123','fqx@itcast.cn','2000-10-01')");
+			int executeUpdate = stmt.executeUpdate("insert into users (name,password,email,birthday) values ('范青霞','123','fqx@itcast.cn','2000-10-01')");
+			System.out.println(executeUpdate);
 		}catch(Exception e){
 			throw new RuntimeException(e);
 		}finally{

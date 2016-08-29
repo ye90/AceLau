@@ -1,5 +1,7 @@
 package jackson;
 
+import static org.junit.Assert.*;
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -44,6 +46,14 @@ public class JacksonDemo {
 		mapper = new ObjectMapper();
 		xml = new XmlMapper();
 		
+	}
+	
+	@Test
+	public void testName()  {
+		String json = JsonUtils.writeValueAsString(user);
+		System.out.println(json);
+		User readValue = JsonUtils.readValue(json, User.class);
+		System.out.println(readValue);
 	}
 
 	/**
